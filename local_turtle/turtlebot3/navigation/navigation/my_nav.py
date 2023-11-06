@@ -46,36 +46,36 @@ class FindLocation(Node):
         
         if msg.data == "fuck":
             # 1st location
-            self.goal_pose.pose.position.x = 1.024743676185608
-            self.goal_pose.pose.position.y = 0.28036895394325256
-            self.goal_pose.pose.position.z = 0.002532958984375
+            self.goal_pose.pose.position.x = 0.5975150465965271
+            self.goal_pose.pose.position.y = 0.2690434157848358
+            self.goal_pose.pose.position.z = 0.002471923828125
             self.goal_pose.pose.orientation.x = 0.0
             self.goal_pose.pose.orientation.y = 0.0
             self.goal_pose.pose.orientation.z = 0.0
             self.goal_pose.pose.orientation.w = 0.0
             
         elif msg.data == "you":
-            self.goal_pose.pose.position.x = 1.5416309833526611
-            self.goal_pose.pose.position.y = -0.38075682520866394
-            self.goal_pose.pose.position.z = -0.001434326171875
+            self.goal_pose.pose.position.x = 1.4203146696090698
+            self.goal_pose.pose.position.y = 0.15007808804512024
+            self.goal_pose.pose.position.z = 0.002471923828125
             self.goal_pose.pose.orientation.x = 0.0
             self.goal_pose.pose.orientation.y = 0.0
             self.goal_pose.pose.orientation.z = 0.0
             self.goal_pose.pose.orientation.w = 0.0
             
         elif msg.data == "your":
-            self.goal_pose.pose.position.x = 1.2454776763916016
-            self.goal_pose.pose.position.y = 1.5881965160369873
-            self.goal_pose.pose.position.z = -0.001434326171875
+            self.goal_pose.pose.position.x = 1.5579602718353271
+            self.goal_pose.pose.position.y = -1.5070929527282715
+            self.goal_pose.pose.position.z = 0.002471923828125
             self.goal_pose.pose.orientation.x = 0.0
             self.goal_pose.pose.orientation.y = 0.0
             self.goal_pose.pose.orientation.z = 0.0
             self.goal_pose.pose.orientation.w = 0.0
             
         elif  msg.data == "asshole":
-            self.goal_pose.pose.position.x = 0
-            self.goal_pose.pose.position.y = 0
-            self.goal_pose.pose.position.z = 0
+            self.goal_pose.pose.position.x = 0.24401304125785828
+            self.goal_pose.pose.position.y = -1.5383559465408325
+            self.goal_pose.pose.position.z = 0.002471923828125
             self.goal_pose.pose.orientation.x = 0.0
             self.goal_pose.pose.orientation.y = 0.0
             self.goal_pose.pose.orientation.z = 0.0
