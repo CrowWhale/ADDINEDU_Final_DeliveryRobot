@@ -1,0 +1,12 @@
+파일 구성은 크게 2가지(realsense 카메라로 xyz좌표 찾는 파일/pubsub하는 파일)
+
+1. D435카메라를 이용하여, 카메라 기준 절대 좌표계에서 인식한 객체의 좌표를 추출하여 텍스트 파일로 저장
+<명령어>
+python3 detect_RS.py --weights best.pt --conf-thres 0.2  (yolo 가상환경)  
+
+
+
+2. pub으로 입력값을 받아서, 그 입력값 중 만족하는 입력값을 받으면 카메라를 sub에서 작동시키는 코드(/pub_sub/test_package)
+<명령어>(pubsub환경)
+(터미널1) ros2 run test_package pub_camera
+(터미널2) ros2 run test_package sub_camera
