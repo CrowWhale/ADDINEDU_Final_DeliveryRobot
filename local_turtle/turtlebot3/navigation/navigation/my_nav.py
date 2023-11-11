@@ -80,13 +80,22 @@ class FindLocation(Node):
             self.goal_pose.pose.orientation.y = 0.0
             self.goal_pose.pose.orientation.z = 0.0
             self.goal_pose.pose.orientation.w = 0.0
-
-        self.nav.goToPose(self.goal_pose)
+        i = 0
         while not self.nav.isTaskComplete():
-            pass
-        
+            i = i + 1
+            feedback = self.nav.getFeedback()
+            if feedback and i % 5 == 0:
+                print('Distance remaining: ' + '{:.2f}'.format(
+                    feedback.distance_remaining) + ' meters.')
+                # Some navigation timeout to demo cancellation
+                if Duration.from_msg(feedback.navigation_time) > Duration(seconds=600.0):
+                    self.nav.cancelNav()
+                # Some navigation request change to demo preemption
+                if Duration.from_msg(feedback.navigation_time) > Duration(seconds=120.0):
+                    self.goal_pose.pose.position.x = -3.0
+                    self.nav.goToPose(self.goal_pose)
         if self.nav.isTaskComplete():
-            print("minibot is %s location arrived!" %(msg.data))
+            print("turtlebot3 is Home location arrived!")
             time.sleep(3)
 
 def main(args=None):
