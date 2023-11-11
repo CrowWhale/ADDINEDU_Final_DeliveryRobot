@@ -10,3 +10,8 @@ python3 detect_RS.py --weights best.pt --conf-thres 0.2  (yolo 가상환경)
 <명령어>(pubsub환경)
 (터미널1) ros2 run test_package pub_camera
 (터미널2) ros2 run test_package sub_camera
+
+
+3. 엘리베이터까지의 거리값을 인식하여 0.3m 이상일 경우 엘리베이터 문이 열림, 0.3m 이하일 경우 엘리베이터 문이 닫힘으로 인식함.
+<명령어>
+python3 depth_el.py
