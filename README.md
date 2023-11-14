@@ -26,7 +26,7 @@ Introduction
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
   <a>
-    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/b7990caa-3cdb-4c64-9bcf-c629de6ce8c7" width="15%" /></a> 
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/5f791e00-8687-4b88-ae2a-63cf7c4d0fa8" width="15%" /></a> 
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
   <a>
@@ -40,6 +40,6 @@ Introduction
   <a>
     <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-aws-small.png" width="7%" /></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
-  
 
+  
 </div>
