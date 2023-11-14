@@ -38,7 +38,7 @@ python3 depth_el.py
 ```
 
 
-# 1. RealSense SDK 매뉴얼
+# 1. RealSense SDK(기초 매뉴얼 )
 
 #### 빌드된 패키지 사용
 **Intel® RealSense™ SDK 2.0**은 Ubuntu 16/18/20/22 [LTS](https://wiki.ubuntu.com/LTS)의 Intel X86/AMD64 기반 Debian 배포용으로 [`dpkg`](https://en.wikipedia.org/wiki/Dpkg) 형식의 설치 패키지를 제공합니다. `librealsense2-dkms` 커널 드라이버 패키지는 Ubuntu LTS 커널 4.4, 4.8, 4.10, 4.13, 4.15, 4.18*, 5.0*, 5.3*, 5.4, 5.13 및 5.15를 지원합니다. 자세한 내용은 [Ubuntu 커널 릴리스 일정](https://wiki.ubuntu.com/Kernel/Support)을 참조하십시오.
@@ -126,7 +126,7 @@ librealsense2-gl-dbg | 디버깅 목적에 필요한 GLSL 디버그 기호 | lib
 <br><br><br><br>
 
 
-# 2. Official YOLOv7
+# 2. Official YOLOv7(기초 매뉴얼)
 
 ![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/c9a18886-9e22-4fb7-8eeb-6aa1184c149c)
 
@@ -251,8 +251,55 @@ python detect.py --weights yolov7.pt --conf 0.25 --img-size 640 --source inferen
 
 <br><br><br><br>
 
-# 3. KAKAO API
+# 3. YOLOv7 학습된 데이터와 RealSense D435를 활용한 좌표 추출
+## (1) 
 
+detect_RS.py 코드 중 일부...
+```
+--- 생략 ---
+        if key == ord('p'):
+            # 'p' 키를 눌렀을 때의 동작
+            with open("pixel_data.txt", "w") as file:
+                for label, (depth_point_in_color[0], depth_point_in_color[1], depth_point_in_color[2]) in depth_info.items():
+                    file.write(f'{label}: {depth_point_in_color[0]:.5f},{depth_point_in_color[1]:.5f},{depth_point_in_color[2]:.5f}\n')
+        if key == ord('q'):
+            break
+--- 이하 생략 ---
+```
+해당 코드를 바탕으로, 객체 인식된 각각의 요소의 x,y,z 좌표를 pixel_data.txt 텍스트 파일에 저장한다.
 
+명령어
+```
+python3 detect_RS.py --weights [학습모델] --conf-thres [원하는 확률]
+```
+예시)
+```
+python3 detect_RS.py --weights best.pt --conf-thres 0.5
+```
 
+# 4. Realsense D435를 활용한 정면 물체와의 거리 측정
 
+depth_el.py 코드 중 일부...
+```
+--- 생략 ---
+                x, y = 320, 240
+                depth_el = round(depth_frame.get_distance(x, y), 2)
+                print("엘리베이터와의 거리: ", depth_el, "m")
+​
+                if depth_el >= 0.3 :
+                    print("엘리베이터 열림")
+                    self.toggle = 1  # 거리가 30 이상이면 toggle에 1 저장
+                else:
+                    # print("엘리베이터 닫힘")
+                    self.toggle = 0  # 거리가 30 미만이면 toggle에 0 저장
+​
+                color_image = np.asanyarray(aligned_frames.get_color_frame().get_data())
+                cv2.imshow('RealSense', cv2.circle(color_image, (x, y), 2, (0, 0, 255), -1))
+--- 이하 생략 ---
+```
+해당 코드를 바탕으로, 정면 물체와의 거리를 측정하여, 0.3m 이상이면 엘리베이터 열림, 0.3m이하이면 엘리베이터 닫힘으로 인식한다.
+
+명령어
+```
+python3 depth_el.py
+```
