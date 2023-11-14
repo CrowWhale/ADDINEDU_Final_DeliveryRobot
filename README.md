@@ -2,7 +2,7 @@ ROBOT_DELIVERY
 =========
 Introduction
 =========
-### 아파트 내 택배를 자동으로 분류 및 보관하는 STATION과 현관까지 배공해주는 배송 주행 로봇 개발
+### 아파트 내 택배를 자동으로 분류 및 보관하는 STATION과 현관까지 배송해주는 배송 주행 로봇 개발
 # Demo
 
 # Sequence
@@ -49,6 +49,7 @@ Introduction
 
 
 # StateChart
+![Screenshot from 2023-11-14 18-27-09](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/4b8a4b3b-2843-48c0-ba67-29bd906329db)
 
 # Ros Package
-
+![Screenshot from 2023-11-14 18-26-37](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/7ae18880-0819-4301-9c87-c6da30babded)
