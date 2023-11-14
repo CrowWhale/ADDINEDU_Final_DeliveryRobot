@@ -245,7 +245,7 @@ python detect.py --weights yolov7.pt --conf 0.25 --img-size 640 --source yourvid
 python detect.py --weights yolov7.pt --conf 0.25 --img-size 640 --source inference/images/horses.jpg
 ```
 
-![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/34d26b62-8afa-47f8-be8e-13a1bcb90034)
+![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/811e1317-de4e-4b8e-97e3-ef6e7227cccc)
 
 
 
