@@ -6,6 +6,7 @@ Introduction
 # Demo
 
 # Sequence
+![Screenshot from 2023-11-14 17-40-37](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/c881aef8-e224-4ff2-b445-d4ea391d142d)
 1. 자율주행 part
 > * 배송로봇 자율주행 구현(ROS, Mapping, Navigation)
 2. Manipulator
@@ -43,4 +44,11 @@ Introduction
 
 </div>
 
+# Hardware
+
+
+
+# StateChart
+
+# Ros Package
 
