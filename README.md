@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=Realsense&YOLO7 &fontSize=90"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=Realsense&YOLO7&fontSize=90"/>
 
 
 <div align="center">  🦭 Introduction 🦭 </div>
@@ -19,7 +19,6 @@
 
 <div align="center"> 🔍 프로그램 실행 🔍 </div>
 
-<img width="80%" src="https://github.com/addinedu-amr-3rd/eda-repo-3/assets/47076138/94831a4a-7b14-4cd9-b7ad-398620e235e8"/>
 
 
 
