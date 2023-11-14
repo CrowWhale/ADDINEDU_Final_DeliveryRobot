@@ -1,15 +1,12 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=Realsense/YOLOv7&fontSize=90"/>
 
-
 # <div align="center">요약정리</div>
 
-## <div align="center">  🦭 Introduction 🦭 </div>
+## <div align="center">  🦭 소개 🦭 </div>
 
-<span style="font-size: 10px;"> 실내 배송 로봇 서비스에서 로봇팔로 여러 행위를 하기 위해서는 정확한 위치를 파악하는 것이 필수적이다.
-때문에, 절대 좌표계를 기준으로 한, 버튼의 (x,y,z) 좌표를 추출하는 것과 엘리베이터 문과의 거리 측정을 바탕으로 열고 닫았음을 알 수 있도록 RealSense D435 모델과 Yolov7을 활용하여 프로젝트를 진행하였다. </span>
+<span style="font-size: 10px;"> 실내 배송 로봇 서비스에서 로봇팔로 여러 행위를 하기 위해서는 정확한 위치를 파악하는 것이 필수적이다. 때문에, 절대 좌표계를 기준으로 한, 버튼의 (x,y,z) 좌표를 추출하는 것과 엘리베이터 문과의 거리 측정을 바탕으로 열고 닫았음을 알 수 있도록 RealSense D435 모델과 Yolov7을 활용하여 프로젝트를 진행하였다. </span>
 
-## <div align="center"> 🦄 Skill 🦄 </div>
-
+## <div align="center"> 🦄 기술 스택 🦄 </div>
 
 <div align="center">
 	<img src="https://img.shields.io/badge/python-3776AB?style=flat&logo=python&logoColor=white" />
@@ -26,141 +23,119 @@
 
 ### 카메라 기준 객체 좌표계 추출
 
-
-
-## <div align="center"> 🍭 Main 🍭 </div>
-
-
+## <div align="center"> 🍭 주요 기능 🍭 </div>
 
 - 카메라 기준 절대 좌표계에서 인식한 객체의 좌표를 추출하여 텍스트 파일로 저장하는 명령어
+
 ```
 python3 detect_RS.py --weights yolov7.pt --conf-thres 0.2
+
 ```
 - 엘리베이터까지의 거리값을 인식하여 0.3m 이상일 경우 엘리베이터 문이 열림, 0.3m 이하일 경우 엘리베이터 문이 닫힘으로 인식하는 명령어
-
+  
 ```
 python3 depth_el.py
 ```
 
 
+# 1. RealSense SDK 매뉴얼
 
-# 1. RealSense SDK Manual
+#### 빌드된 패키지 사용
+**Intel® RealSense™ SDK 2.0**은 Ubuntu 16/18/20/22 [LTS](https://wiki.ubuntu.com/LTS)의 Intel X86/AMD64 기반 Debian 배포용으로 [`dpkg`](https://en.wikipedia.org/wiki/Dpkg) 형식의 설치 패키지를 제공합니다. `librealsense2-dkms` 커널 드라이버 패키지는 Ubuntu LTS 커널 4.4, 4.8, 4.10, 4.13, 4.15, 4.18*, 5.0*, 5.3*, 5.4, 5.13 및 5.15를 지원합니다. 자세한 내용은 [Ubuntu 커널 릴리스 일정](https://wiki.ubuntu.com/Kernel/Support)을 참조하십시오.
 
-#### Using pre-build packages
-**Intel® RealSense™ SDK 2.0** provides installation packages for Intel X86/AMD64-based Debian distributions in [`dpkg`](https://en.wikipedia.org/wiki/Dpkg) format for Ubuntu 16/18/20/22 [LTS](https://wiki.ubuntu.com/LTS).    
-The Realsense [DKMS](https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support) kernel drivers package (`librealsense2-dkms`) supports Ubuntu LTS kernels 4.4, 4.8, 4.10, 4.13, 4.15, 4.18*, 5.0*, 5.3*, 5.4, 5.13 and 5.15. Please refer to [Ubuntu Kernel Release Schedule](https://wiki.ubuntu.com/Kernel/Support) for further details.
+#### 소스 코드에서 구성 및 빌드
+가능한 경우 DKMS 패키지를 사용하는 것이 좋지만 다음 경우에는 수동으로 시스템을 설치하고 패치해야 합니다.
+ - LTS가 아닌 Ubuntu 커널 버전 사용: **4.16 **
+ - 사용자 지정 패치/모듈을 `librealsense` SDK와 통합.
+ - 대안 커널/배포에 대한 패치 조정.
 
-#### Configuring and building from the source code
-While we strongly recommend to use DKMS package whenever possible, there are certain cases where installing and patching the system manually is necessary:
- - Using SDK with non-LTS Ubuntu kernel versions: **4.16 **
- - Integration of user-specific patches/modules with `librealsense` SDK.
- - Adjusting the patches for alternative kernels/distributions.
+자세한 단계는 [Linux 수동 설치 가이드](./installation.md)에 설명되어 있습니다.
 
-The steps are described in [Linux manual installation guide](./installation.md)
-
-
-## Installing the packages:
-- Register the server's public key:
+## (1) 패키지 다운로드:
+- 서버의 공개 키 등록:
 ```
 sudo mkdir -p /etc/apt/keyrings
 curl -sSf https://librealsense.intel.com/Debian/librealsense.pgp | sudo tee /etc/apt/keyrings/librealsense.pgp > /dev/null
 ```
 
-- Make sure apt HTTPS support is installed:
-`sudo apt-get install apt-transport-https`
+- Make sure apt HTTPS support is installed: `sudo apt-get install apt-transport-https`
 
-- Add the server to the list of repositories:
+- 저장소 목록에 서버를 추가: 
 ```
 echo "deb [signed-by=/etc/apt/keyrings/librealsense.pgp] https://librealsense.intel.com/Debian/apt-repo `lsb_release -cs` main" | \
 sudo tee /etc/apt/sources.list.d/librealsense.list
 sudo apt-get update
 ```
 
-- Install the libraries (see section below if upgrading packages):  
+- 라이브러리 설치: 
   `sudo apt-get install librealsense2-dkms`  
   `sudo apt-get install librealsense2-utils`  
-  The above two lines will deploy librealsense2 udev rules, build and activate kernel modules, runtime library and executable demos and tools.  
+위의 두 줄은 librealsense2 udev 규칙을 배포하고 커널 모듈, 런타임 라이브러리, 실행 가능한 데모 및 도구를 빌드 및 활성화합니다.
 
-- Optionally install the developer and debug packages:  
+
+- 선택적으로 개발자 및 디버그 패키지 설치: 
   `sudo apt-get install librealsense2-dev`  
   `sudo apt-get install librealsense2-dbg`  
-  With `dev` package installed, you can compile an application with **librealsense** using `g++ -std=c++11 filename.cpp -lrealsense2` or an IDE of your choice.
 
-Reconnect the Intel RealSense depth camera and run: `realsense-viewer` to verify the installation.
+Intel RealSense D435 카메라를 다시 연결하고 다음을 실행: `realsense-viewer`
 
-Verify that the kernel is updated :    
-`modinfo uvcvideo | grep "version:"` should include `realsense` string
+커널 업데이트 확인 :    
+`modinfo uvcvideo | grep "version:"` 는 `realsense` 를 포함해야 한다.
 
-## Upgrading the Packages:
-Refresh the local packages cache by invoking:  
+
+
+
+
+## (2) 패키지 업그레이드:
+다음을 호출하여 로컬 패키지 캐시를 새로 고칩니다.
   `sudo apt-get update`  
 
-Upgrade all the installed packages, including `librealsense` with:  
+`librealsense` 포함하여 설치된 모든 패키지를 업그레이드합니다.
   `sudo apt-get upgrade`
 
-To upgrade selected packages only a more granular approach can be applied:  
+선택한 패키지를 업그레이드하려면 보다 세부적인 접근 방식만 적용할 수 있습니다.
   `sudo apt-get --only-upgrade install <package1 package2 ...>`  
-  E.g:   
+  예시:   
   `sudo apt-get --only-upgrade install  librealsense2-utils librealsense2-dkms`  
 
-## Uninstalling the Packages:
-**Important** Removing Debian package is allowed only when no other installed packages directly refer to it. For example removing `librealsense2-udev-rules` requires `librealsense2` to be removed first.
+## (3) 패키지 제거:
+**Important**  패키지 제거는 설치된 다른 패키지가 이를 직접 참조하지 않는 경우에만 허용된다.
+예를 들어,`librealsense2-udev-rules`를 삭제 하기 위해서는 `librealsense2` 를 먼저 지울 것.
 
-Remove a single package with:   
+다음을 사용하여 단일 패키지를 제거합니다.
   `sudo apt-get purge <package-name>`  
 
-Remove all RealSense™ SDK-related packages with:   
+다음을 사용하여 RealSense™ SDK 관련 패키지를 모두 제거하세요.
   `dpkg -l | grep "realsense" | cut -d " " -f 3 | xargs sudo dpkg --purge`  
 
-## Package Details:
+## 패키지 세부사항:
 The packages and their respective content are listed below:  
 
-Name    |      Content   | Depends on |
+이름    |      콘텐츠   | Depends on |
 -------- | ------------ | ---------------- |
-librealsense2-udev-rules | Configures RealSense device permissions on kernel level  | -
-librealsense2-dkms | DKMS package for Depth cameras-specific kernel extensions | librealsense2-udev-rules
-librealsense2 | RealSense™ SDK runtime (.so) and configuration files | librealsense2-udev-rules
-librealsense2-utils | Demos and tools available as a part of RealSense™ SDK | librealsense2
-librealsense2-dev | Header files and symbolic link for developers | librealsense2
-librealsense2-dbg | Debug symbols for developers  | librealsense2
-librealsense2-gl | GLSL extension module runtime and configuration file | librealsense2
-librealsense2-gl-dev | GLSL development header files and symbolic link | librealsense2
-librealsense2-gl-dbg | GLSL debug symbols required for debugging purposes | librealsense2
-
-**Note** The packages include binaries and configuration files only.
-Use the github repository to obtain the source code.
-
-
-
-
+librealsense2-udev-rules | 커널 수준에서 RealSense 장치 권한을 구성합니다.	 | -
+librealsense2-dkms | 심도 카메라별 커널 확장용 DKMS 패키지 | librealsense2-udev-rules
+librealsense2 | RealSense™ SDK 런타임(.so) 및 구성 파일 | librealsense2-udev-rules
+librealsense2-utils | RealSense™ SDK의 일부로 사용 가능한 데모 및 도구	 | librealsense2
+librealsense2-dev | 개발자를 위한 헤더 파일 및 심볼릭 링크 | librealsense2
+librealsense2-dbg | 개발자를 위한 디버그 기호  | librealsense2
+librealsense2-gl | GLSL 확장 모듈 런타임 및 구성 파일 | librealsense2
+librealsense2-gl-dev | GLSL 개발 헤더 파일 및 심볼릭 링크 | librealsense2
+librealsense2-gl-dbg | 디버깅 목적에 필요한 GLSL 디버그 기호 | librealsense2
 
 <br><br><br><br>
 
 
 # 2. Official YOLOv7
 
-Implementation of paper - [YOLOv7: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors](https://arxiv.org/abs/2207.02696)
+![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/c9a18886-9e22-4fb7-8eeb-6aa1184c149c)
 
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/yolov7-trainable-bag-of-freebies-sets-new/real-time-object-detection-on-coco)](https://paperswithcode.com/sota/real-time-object-detection-on-coco?p=yolov7-trainable-bag-of-freebies-sets-new)
-[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/akhaliq/yolov7)
-<a href="https://colab.research.google.com/gist/AlexeyAB/b769f5795e65fdab80086f6cb7940dae/yolov7detection.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
-[![arxiv.org](http://img.shields.io/badge/cs.CV-arXiv%3A2207.02696-B31B1B.svg)](https://arxiv.org/abs/2207.02696)
 
-<div align="center">
-    <a href="./">
-        <img src="./figure/performance.png" width="79%"/>
-    </a>
-</div>
-
-## Web Demo
-
-- Integrated into [Huggingface Spaces 🤗](https://huggingface.co/spaces/akhaliq/yolov7) using Gradio. Try out the Web Demo [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/akhaliq/yolov7)
-
-## Performance 
+## (1)성능
 
 MS COCO
 
-| Model | Test Size | AP<sup>test</sup> | AP<sub>50</sub><sup>test</sup> | AP<sub>75</sub><sup>test</sup> | batch 1 fps | batch 32 average time |
+| Model | 테스트 Size | AP<sup>테스트</sup> | AP<sub>50</sub><sup>테스트</sup> | AP<sub>75</sub><sup>테스트</sup> | 배치 1 fps | 배치 32 average time |
 | :-- | :-: | :-: | :-: | :-: | :-: | :-: |
 | [**YOLOv7**](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7.pt) | 640 | **51.4%** | **69.7%** | **55.9%** | 161 *fps* | 2.8 *ms* |
 | [**YOLOv7-X**](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7x.pt) | 640 | **53.1%** | **71.2%** | **57.8%** | 114 *fps* | 4.3 *ms* |
@@ -170,10 +145,10 @@ MS COCO
 | [**YOLOv7-D6**](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-d6.pt) | 1280 | **56.6%** | **74.0%** | **61.8%** | 44 *fps* | 15.0 *ms* |
 | [**YOLOv7-E6E**](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-e6e.pt) | 1280 | **56.8%** | **74.4%** | **62.1%** | 36 *fps* | 18.7 *ms* |
 
-## Installation
+## (2)설치
 
-Docker environment (recommended)
-<details><summary> <b>Expand</b> </summary>
+도커 환경 (추천)
+<details><summary> <b>더보기</b> </summary>
 
 ``` shell
 # create the docker container, you can change the share memory size if you have more.
@@ -192,7 +167,7 @@ cd /yolov7
 
 </details>
 
-## Testing
+## (3) 테스트
 
 [`yolov7.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7.pt) [`yolov7x.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7x.pt) [`yolov7-w6.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-w6.pt) [`yolov7-e6.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-e6.pt) [`yolov7-d6.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-d6.pt) [`yolov7-e6e.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-e6e.pt)
 
@@ -200,8 +175,7 @@ cd /yolov7
 python test.py --data data/coco.yaml --img 640 --batch 32 --conf 0.001 --iou 0.65 --device 0 --weights yolov7.pt --name yolov7_640_val
 ```
 
-You will get the results:
-
+그 결과는 다음과 같습니다.
 ```
  Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.51206
  Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.69730
@@ -217,20 +191,18 @@ You will get the results:
  Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.83868
 ```
 
-To measure accuracy, download [COCO-annotations for Pycocotools](http://images.cocodataset.org/annotations/annotations_trainval2017.zip) to the `./coco/annotations/instances_val2017.json`
+정확성 측정을 위해 다음을 다운로드 할것. [COCO-annotations for Pycocotools](http://images.cocodataset.org/annotations/annotations_trainval2017.zip) to the `./coco/annotations/instances_val2017.json`
 
-## Training
+## (4) 훈련
 
-Data preparation
-
+데이터 준비하기
 ``` shell
 bash scripts/get_coco.sh
 ```
 
-* Download MS COCO dataset images ([train](http://images.cocodataset.org/zips/train2017.zip), [val](http://images.cocodataset.org/zips/val2017.zip), [test](http://images.cocodataset.org/zips/test2017.zip)) and [labels](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/coco2017labels-segments.zip). If you have previously used a different version of YOLO, we strongly recommend that you delete `train2017.cache` and `val2017.cache` files, and redownload [labels](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/coco2017labels-segments.zip) 
+* MS coco 데이터셋을 다운로드 하세요. ([train](http://images.cocodataset.org/zips/train2017.zip), [val](http://images.cocodataset.org/zips/val2017.zip), [test](http://images.cocodataset.org/zips/test2017.zip)) and [labels](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/coco2017labels-segments.zip). 이전에 다른 버전 YOLO를 사용한 적 있다면 `train2017.cache` and `val2017.cache` 파일을 삭제하고 다시 다운로드 하세요.  [labels](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/coco2017labels-segments.zip) 
 
-Single GPU training
-
+'단일' GPU 훈련
 ``` shell
 # train p5 models
 python train.py --workers 8 --device 0 --batch-size 32 --data data/coco.yaml --img 640 640 --cfg cfg/training/yolov7.yaml --weights '' --name yolov7 --hyp data/hyp.scratch.p5.yaml
@@ -239,8 +211,7 @@ python train.py --workers 8 --device 0 --batch-size 32 --data data/coco.yaml --i
 python train_aux.py --workers 8 --device 0 --batch-size 16 --data data/coco.yaml --img 1280 1280 --cfg cfg/training/yolov7-w6.yaml --weights '' --name yolov7-w6 --hyp data/hyp.scratch.p6.yaml
 ```
 
-Multiple GPU training
-
+다중 GPU 훈련
 ``` shell
 # train p5 models
 python -m torch.distributed.launch --nproc_per_node 4 --master_port 9527 train.py --workers 8 --device 0,1,2,3 --sync-bn --batch-size 128 --data data/coco.yaml --img 640 640 --cfg cfg/training/yolov7.yaml --weights '' --name yolov7 --hyp data/hyp.scratch.p5.yaml
@@ -249,12 +220,11 @@ python -m torch.distributed.launch --nproc_per_node 4 --master_port 9527 train.p
 python -m torch.distributed.launch --nproc_per_node 8 --master_port 9527 train_aux.py --workers 8 --device 0,1,2,3,4,5,6,7 --sync-bn --batch-size 128 --data data/coco.yaml --img 1280 1280 --cfg cfg/training/yolov7-w6.yaml --weights '' --name yolov7-w6 --hyp data/hyp.scratch.p6.yaml
 ```
 
-## Transfer learning
+## (5) 전이 학습
 
 [`yolov7_training.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7_training.pt) [`yolov7x_training.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7x_training.pt) [`yolov7-w6_training.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-w6_training.pt) [`yolov7-e6_training.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-e6_training.pt) [`yolov7-d6_training.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-d6_training.pt) [`yolov7-e6e_training.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-e6e_training.pt)
 
-Single GPU finetuning for custom dataset
-
+맞춤형 데이터 세트를 위한 단일 GPU 미세 조정
 ``` shell
 # finetune p5 models
 python train.py --workers 8 --device 0 --batch-size 32 --data data/custom.yaml --img 640 640 --cfg cfg/training/yolov7-custom.yaml --weights 'yolov7_training.pt' --name yolov7-custom --hyp data/hyp.scratch.custom.yaml
@@ -263,150 +233,20 @@ python train.py --workers 8 --device 0 --batch-size 32 --data data/custom.yaml -
 python train_aux.py --workers 8 --device 0 --batch-size 16 --data data/custom.yaml --img 1280 1280 --cfg cfg/training/yolov7-w6-custom.yaml --weights 'yolov7-w6_training.pt' --name yolov7-w6-custom --hyp data/hyp.scratch.custom.yaml
 ```
 
-## Re-parameterization
+## (6) 추론해보기
 
-See [reparameterization.ipynb](tools/reparameterization.ipynb)
-
-## Inference
-
-On video:
+비디오 :
 ``` shell
 python detect.py --weights yolov7.pt --conf 0.25 --img-size 640 --source yourvideo.mp4
 ```
 
-On image:
+이미지 :
 ``` shell
 python detect.py --weights yolov7.pt --conf 0.25 --img-size 640 --source inference/images/horses.jpg
 ```
 
-<div align="center">
-    <a href="./">
-        <img src="./figure/horses_prediction.jpg" width="59%"/>
-    </a>
-</div>
+![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/34d26b62-8afa-47f8-be8e-13a1bcb90034)
 
-
-## Export
-
-**Pytorch to CoreML (and inference on MacOS/iOS)** <a href="https://colab.research.google.com/github/WongKinYiu/yolov7/blob/main/tools/YOLOv7CoreML.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
-
-**Pytorch to ONNX with NMS (and inference)** <a href="https://colab.research.google.com/github/WongKinYiu/yolov7/blob/main/tools/YOLOv7onnx.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
-```shell
-python export.py --weights yolov7-tiny.pt --grid --end2end --simplify \
-        --topk-all 100 --iou-thres 0.65 --conf-thres 0.35 --img-size 640 640 --max-wh 640
-```
-
-**Pytorch to TensorRT with NMS (and inference)** <a href="https://colab.research.google.com/github/WongKinYiu/yolov7/blob/main/tools/YOLOv7trt.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a>
-
-```shell
-wget https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-tiny.pt
-python export.py --weights ./yolov7-tiny.pt --grid --end2end --simplify --topk-all 100 --iou-thres 0.65 --conf-thres 0.35 --img-size 640 640
-git clone https://github.com/Linaom1214/tensorrt-python.git
-python ./tensorrt-python/export.py -o yolov7-tiny.onnx -e yolov7-tiny-nms.trt -p fp16
-```
-
-**Pytorch to TensorRT another way** <a href="https://colab.research.google.com/gist/AlexeyAB/fcb47ae544cf284eb24d8ad8e880d45c/yolov7trtlinaom.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a> <details><summary> <b>Expand</b> </summary>
-
-
-```shell
-wget https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-tiny.pt
-python export.py --weights yolov7-tiny.pt --grid --include-nms
-git clone https://github.com/Linaom1214/tensorrt-python.git
-python ./tensorrt-python/export.py -o yolov7-tiny.onnx -e yolov7-tiny-nms.trt -p fp16
-
-# Or use trtexec to convert ONNX to TensorRT engine
-/usr/src/tensorrt/bin/trtexec --onnx=yolov7-tiny.onnx --saveEngine=yolov7-tiny-nms.trt --fp16
-```
-
-</details>
-
-Tested with: Python 3.7.13, Pytorch 1.12.0+cu113
-
-## Pose estimation
-
-[`code`](https://github.com/WongKinYiu/yolov7/tree/pose) [`yolov7-w6-pose.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-w6-pose.pt)
-
-See [keypoint.ipynb](https://github.com/WongKinYiu/yolov7/blob/main/tools/keypoint.ipynb).
-
-<div align="center">
-    <a href="./">
-        <img src="./figure/pose.png" width="39%"/>
-    </a>
-</div>
-
-
-## Instance segmentation (with NTU)
-
-[`code`](https://github.com/WongKinYiu/yolov7/tree/mask) [`yolov7-mask.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-mask.pt)
-
-See [instance.ipynb](https://github.com/WongKinYiu/yolov7/blob/main/tools/instance.ipynb).
-
-<div align="center">
-    <a href="./">
-        <img src="./figure/mask.png" width="59%"/>
-    </a>
-</div>
-
-## Instance segmentation
-
-[`code`](https://github.com/WongKinYiu/yolov7/tree/u7/seg) [`yolov7-seg.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-seg.pt)
-
-YOLOv7 for instance segmentation (YOLOR + YOLOv5 + YOLACT)
-
-| Model | Test Size | AP<sup>box</sup> | AP<sub>50</sub><sup>box</sup> | AP<sub>75</sub><sup>box</sup> | AP<sup>mask</sup> | AP<sub>50</sub><sup>mask</sup> | AP<sub>75</sub><sup>mask</sup> |
-| :-- | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| **YOLOv7-seg** | 640 | **51.4%** | **69.4%** | **55.8%** | **41.5%** | **65.5%** | **43.7%** |
-
-## Anchor free detection head
-
-[`code`](https://github.com/WongKinYiu/yolov7/tree/u6) [`yolov7-u6.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-u6.pt)
-
-YOLOv7 with decoupled TAL head (YOLOR + YOLOv5 + YOLOv6)
-
-| Model | Test Size | AP<sup>val</sup> | AP<sub>50</sub><sup>val</sup> | AP<sub>75</sub><sup>val</sup> |
-| :-- | :-: | :-: | :-: | :-: |
-| **YOLOv7-u6** | 640 | **52.6%** | **69.7%** | **57.3%** |
-
-
-## Citation
-
-```
-@inproceedings{wang2023yolov7,
-  title={{YOLOv7}: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors},
-  author={Wang, Chien-Yao and Bochkovskiy, Alexey and Liao, Hong-Yuan Mark},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year={2023}
-}
-```
-
-```
-@article{wang2023designing,
-  title={Designing Network Design Strategies Through Gradient Path Analysis},
-  author={Wang, Chien-Yao and Liao, Hong-Yuan Mark and Yeh, I-Hau},
-  journal={Journal of Information Science and Engineering},
-  year={2023}
-}
-```
-
-
-
-
-## Acknowledgements
-
-<details><summary> <b>Expand</b> </summary>
-
-* [https://github.com/AlexeyAB/darknet](https://github.com/AlexeyAB/darknet)
-* [https://github.com/WongKinYiu/yolor](https://github.com/WongKinYiu/yolor)
-* [https://github.com/WongKinYiu/PyTorch_YOLOv4](https://github.com/WongKinYiu/PyTorch_YOLOv4)
-* [https://github.com/WongKinYiu/ScaledYOLOv4](https://github.com/WongKinYiu/ScaledYOLOv4)
-* [https://github.com/Megvii-BaseDetection/YOLOX](https://github.com/Megvii-BaseDetection/YOLOX)
-* [https://github.com/ultralytics/yolov3](https://github.com/ultralytics/yolov3)
-* [https://github.com/ultralytics/yolov5](https://github.com/ultralytics/yolov5)
-* [https://github.com/DingXiaoH/RepVGG](https://github.com/DingXiaoH/RepVGG)
-* [https://github.com/JUGGHM/OREPA_CVPR2022](https://github.com/JUGGHM/OREPA_CVPR2022)
-* [https://github.com/TexasInstruments/edgeai-yolov5/tree/yolo-pose](https://github.com/TexasInstruments/edgeai-yolov5/tree/yolo-pose)
-
-</details>
 
 
 <br><br><br><br>
