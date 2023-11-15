@@ -60,11 +60,15 @@ Introduction
 3. 현관 배송 후 복귀
 ![현관](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/71e1c026-94a1-4638-b2f9-c92e83e073fc)
 # Ros Package
-![Screenshot from 2023-11-14 18-26-37](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/7ae18880-0819-4301-9c87-c6da30babded)
+![ros_package](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/3e7ac35c-5b86-4f85-abc6-e2ebe4641b74)
 
 # Hardware
 
-## 1. Turtlebot3
+## 1. Turtlebot3 & YDLidar
+  <a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/2989c886-dfb2-4f39-9778-3609b2a39f12" width="50%" /></a> 
+
+
 * Referance: [Turtlebot3_e-Maniual](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)
 ### Excute Code
 * PC
@@ -80,6 +84,10 @@ ros2 launch turtlebot3_bringup robot.launch.py
 ```
 
 ## 2. Manipulator
+  <a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/3eee941e-9710-4f08-aad8-51482dca98db" width="50%" /></a> 
+
+
 * Referance: [OpenMANIPULATOR-X_e-Maniual](https://emanual.robotis.com/docs/en/platform/openmanipulator_x/overview/)
 ### Excute Code
 * PC
