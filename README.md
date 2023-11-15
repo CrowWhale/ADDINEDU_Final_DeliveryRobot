@@ -24,9 +24,6 @@ ROBOT_DELIVERY
   
   <a>
     <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-docker-small.png" width="7%" /></a>
-  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
-  
-
 
 </div>
 
