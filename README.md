@@ -54,7 +54,7 @@ Introduction
 # Hardware
 
 > ## Turtlebot3
-> > ### Tutorial: [Turtlebot3_e-Maniual](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)
+> > Referance: [Turtlebot3_e-Maniual](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)
 > > ### Excute Code
 > > > PC
 > > > >```
