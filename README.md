@@ -75,6 +75,16 @@ ros2 launch turtlebot3_bringup robot.launch.py
 ```
 
 ## 2. Manipulator
+* Referance: [Turtlebot3_e-Maniual](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)
+### Excute Code
+* PC
+```
+ros2 run test_package real_sub
+```
+* Raseberry Pi
+```
+ros2 launch open_manipulator_x_controller open_manipulator_x_controller.launch.py
+```
 
 ## 3. Station
 ## 4. RealSense 
