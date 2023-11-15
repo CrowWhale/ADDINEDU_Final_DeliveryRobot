@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=Realsense/YOLOv7&fontSize=90"/>
+[Screencast from 11-15-2023 10:00:47 AM.webm](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/7908fe9a-91c6-4557-98db-d5b81bcef162)<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=Realsense/YOLOv7&fontSize=90"/>
 
 # <div align="center">요약정리</div>
 
@@ -21,6 +21,8 @@
 
 ## <div align="center"> 🔍 프로그램 실행 🔍 </div>
 
+
+
 ### 카메라 기준 객체 좌표계 추출
 
 ## <div align="center"> 🍭 주요 기능 🍭 </div>
@@ -31,6 +33,8 @@
 python3 detect_RS.py --weights yolov7.pt --conf-thres 0.2
 
 ```
+![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/f43497bb-643e-4a73-9224-b77bd7972e11)
+
 - 엘리베이터까지의 거리값을 인식하여 0.3m 이상일 경우 엘리베이터 문이 열림, 0.3m 이하일 경우 엘리베이터 문이 닫힘으로 인식하는 명령어
   
 ```
