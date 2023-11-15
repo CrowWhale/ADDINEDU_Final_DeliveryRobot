@@ -4,6 +4,9 @@ Introduction
 =========
 ### 아파트 내 택배를 자동으로 분류 및 보관하는 STATION과 현관까지 배송해주는 배송 주행 로봇 개발
 # Demo
+<div align="center">
+  <img src="demo.gif"/>
+</div>
 
 # Sequence
 ![Screenshot from 2023-11-14 17-40-37](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/c881aef8-e224-4ff2-b445-d4ea391d142d)
