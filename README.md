@@ -72,7 +72,7 @@ Introduction
 > >
 > ## Station
 > ## RealSense 
-
+> ## Server
 # StateChart
 ![Screenshot from 2023-11-14 18-27-09](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/4b8a4b3b-2843-48c0-ba67-29bd906329db)
 
