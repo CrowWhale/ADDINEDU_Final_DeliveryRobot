@@ -75,7 +75,7 @@ ros2 launch turtlebot3_bringup robot.launch.py
 ```
 
 ## 2. Manipulator
-* Referance: [Turtlebot3_e-Maniual](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)
+* Referance: [OpenMANIPULATOR-X_e-Maniual](https://emanual.robotis.com/docs/en/platform/openmanipulator_x/overview/)
 ### Excute Code
 * PC
 ```
