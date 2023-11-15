@@ -72,8 +72,6 @@ dddddddddddddddddddd
 - 채택된 아이디어
   - 관람차처럼 회전, 순환하면서 택배를 저장하는 구조를 구현하자.
 
-기구학적인 구조 설명하는 사진
-
 <div align="center">
   <a>
     <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/ba506897-1435-4688-b4a1-dcf31c32a36a" width="20%" /></a>
@@ -84,11 +82,11 @@ dddddddddddddddddddd
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
   <a>
-    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/b32db026-1fdc-400c-884c-a8378d228212 width="20%" /></a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/b32db026-1fdc-400c-884c-a8378d228212" width="20%" /></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
-    <a>
-    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/aa3a01b7-b49f-45b4-8b51-16ffe0ca75d8 width="20%" /></a>
+  <a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/aa3a01b7-b49f-45b4-8b51-16ffe0ca75d8" width="20%" /></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
   
 </div>
@@ -101,8 +99,7 @@ dddddddddddddddddddd
   - 택배를 저장, 출고, 바구니를 회전하는 그 어떤 상황에서든 바구니의 평형을 유지해야한다.
   - 바구니의 진행경로상에서 다른 바구니와의 충돌 즉 다른 바구니의 회전을 막아서는 안된다.
 
-스테이션 저장부분 사진
-![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/aa3a01b7-b49f-45b4-8b51-16ffe0ca75d8)
+
 
 
 ##### 결과
