@@ -3,11 +3,11 @@
 
 # <div align="center">요약정리</div>
 
-## <div align="center">  🦭 소개 🦭 </div>
+## <div align="center">  소개 </div>
 
 <span style="font-size: 10px;"> 실내 배송 로봇 서비스에서 로봇팔로 여러 행위를 하기 위해서는 정확한 위치를 파악하는 것이 필수적이다. 때문에, 절대 좌표계를 기준으로 한, 버튼의 (x,y,z) 좌표를 추출하는 것과 엘리베이터 문과의 거리 측정을 바탕으로 열고 닫았음을 알 수 있도록 RealSense D435 모델과 Yolov7을 활용하여 프로젝트를 진행하였다. </span>
 
-## <div align="center"> 🦄 기술 스택 🦄 </div>
+## <div align="center"> 기술 스택 </div>
 
 <div align="center">
 	<img src="https://img.shields.io/badge/python-3776AB?style=flat&logo=python&logoColor=white" />
@@ -20,17 +20,15 @@
    	<img src="https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white"/>
 </div>
 
-## <div align="center"> 🔍 프로그램 실행 🔍 </div>
-### (1)
+## <div align="center"> 프로그램 실행 </div>
+### (1) 로봇 기준, 인식된 객체의 좌표계 추출
 ![ezgif com-video-to-gif](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/eb679b0a-1f5f-4909-b294-be70ccbb02f6)
-### (2)
+### (2) 로봇 기준 정면 물체(엘리베이터)와의 거리 실시간 검출
 ![ezgif com-video-to-gif (1)](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/6f97749c-2506-4979-95c4-7861764e332c)
 
 
 
-### 카메라 기준 객체 좌표계 추출
-
-## <div align="center"> 🍭 주요 기능 🍭 </div>
+## <div align="center"> 주요 기능 </div>
 
 - 카메라 기준 절대 좌표계에서 인식한 객체의 좌표를 추출하여 텍스트 파일로 저장하는 명령어
 
@@ -225,6 +223,7 @@ depth_el.py 코드 중 일부...
                 cv2.imshow('RealSense', cv2.circle(color_image, (x, y), 2, (0, 0, 255), -1))
 --- 이하 생략 ---
 ```
+<br>
 해당 코드를 바탕으로, 정면 물체와의 거리를 측정하여, 0.3m 이상이면 엘리베이터 열림, 0.3m이하이면 엘리베이터 닫힘으로 인식한다.
 
 명령어
