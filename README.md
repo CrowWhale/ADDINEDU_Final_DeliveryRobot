@@ -70,8 +70,6 @@ sudo apt-get update
 - 라이브러리 설치: 
   `sudo apt-get install librealsense2-dkms`  
   `sudo apt-get install librealsense2-utils`  
-위의 두 줄은 librealsense2 udev 규칙을 배포하고 커널 모듈, 런타임 라이브러리, 실행 가능한 데모 및 도구를 빌드 및 활성화합니다.
-
 
 - 선택적으로 개발자 및 디버그 패키지 설치: 
   `sudo apt-get install librealsense2-dev`  
@@ -87,42 +85,23 @@ Intel RealSense D435 카메라를 다시 연결하고 다음을 실행: `realsen
 
 
 ## (2) 패키지 업그레이드:
-다음을 호출하여 로컬 패키지 캐시를 새로 고칩니다.
   `sudo apt-get update`  
 
-`librealsense` 포함하여 설치된 모든 패키지를 업그레이드합니다.
+`librealsense` 포함하여 설치된 모든 패키지를 업그레이드
   `sudo apt-get upgrade`
 
-선택한 패키지를 업그레이드하려면 보다 세부적인 접근 방식만 적용할 수 있습니다.
+선택한 패키지를 업그레이드하려면 보다 세부적인 접근 방식
   `sudo apt-get --only-upgrade install <package1 package2 ...>`  
   예시:   
   `sudo apt-get --only-upgrade install  librealsense2-utils librealsense2-dkms`  
 
 ## (3) 패키지 제거:
-**Important**  패키지 제거는 설치된 다른 패키지가 이를 직접 참조하지 않는 경우에만 허용된다.
-예를 들어,`librealsense2-udev-rules`를 삭제 하기 위해서는 `librealsense2` 를 먼저 지울 것.
 
 다음을 사용하여 단일 패키지를 제거
   `sudo apt-get purge <package-name>`  
 
 다음을 사용하여 RealSense™ SDK 관련 패키지를 모두 제거
   `dpkg -l | grep "realsense" | cut -d " " -f 3 | xargs sudo dpkg --purge`  
-
-## 패키지 세부사항:
-
-이름    |      콘텐츠   | Depends on |
--------- | ------------ | ---------------- |
-librealsense2-udev-rules | 커널 수준에서 RealSense 장치 권한을 구성합니다.	 | -
-librealsense2-dkms | 심도 카메라별 커널 확장용 DKMS 패키지 | librealsense2-udev-rules
-librealsense2 | RealSense™ SDK 런타임(.so) 및 구성 파일 | librealsense2-udev-rules
-librealsense2-utils | RealSense™ SDK의 일부로 사용 가능한 데모 및 도구	 | librealsense2
-librealsense2-dev | 개발자를 위한 헤더 파일 및 심볼릭 링크 | librealsense2
-librealsense2-dbg | 개발자를 위한 디버그 기호  | librealsense2
-librealsense2-gl | GLSL 확장 모듈 런타임 및 구성 파일 | librealsense2
-librealsense2-gl-dev | GLSL 개발 헤더 파일 및 심볼릭 링크 | librealsense2
-librealsense2-gl-dbg | 디버깅 목적에 필요한 GLSL 디버그 기호 | librealsense2
-
-<br><br><br><br>
 
 
 # 2. Official YOLOv7(기초 매뉴얼)
@@ -136,15 +115,8 @@ MS COCO
 | [**YOLOv7**](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7.pt) | 640 | **51.4%** | **69.7%** | **55.9%** | 161 *fps* | 2.8 *ms* |
 | [**YOLOv7-X**](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7x.pt) | 640 | **53.1%** | **71.2%** | **57.8%** | 114 *fps* | 4.3 *ms* |
 |  |  |  |  |  |  |  |
-| [**YOLOv7-W6**](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-w6.pt) | 1280 | **54.9%** | **72.6%** | **60.1%** | 84 *fps* | 7.6 *ms* |
-| [**YOLOv7-E6**](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-e6.pt) | 1280 | **56.0%** | **73.5%** | **61.2%** | 56 *fps* | 12.3 *ms* |
-| [**YOLOv7-D6**](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-d6.pt) | 1280 | **56.6%** | **74.0%** | **61.8%** | 44 *fps* | 15.0 *ms* |
-| [**YOLOv7-E6E**](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-e6e.pt) | 1280 | **56.8%** | **74.4%** | **62.1%** | 36 *fps* | 18.7 *ms* |
 
 ## (2)설치
-
-도커 환경 (추천)
-<details><summary> <b>더보기</b> </summary>
 
 ``` shell
 # create the docker container, you can change the share memory size if you have more.
@@ -165,15 +137,13 @@ cd /yolov7
 
 ## (3) 테스트
 
-[`yolov7.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7.pt) [`yolov7x.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7x.pt) [`yolov7-w6.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-w6.pt) [`yolov7-e6.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-e6.pt) [`yolov7-d6.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-d6.pt) [`yolov7-e6e.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-e6e.pt)
-
+[`yolov7.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7.pt) [`yolov7x.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7x.pt) [`yolov7-w6.pt`]
 ``` shell
 python test.py --data data/coco.yaml --img 640 --batch 32 --conf 0.001 --iou 0.65 --device 0 --weights yolov7.pt --name yolov7_640_val
 ```
-
 ## (4) 훈련
 
-데이터 준비하기
+데이터 준비
 ``` shell
 bash scripts/get_coco.sh
 ```
@@ -187,29 +157,12 @@ python train.py --workers 8 --device 0 --batch-size 32 --data data/coco.yaml --i
 python train_aux.py --workers 8 --device 0 --batch-size 16 --data data/coco.yaml --img 1280 1280 --cfg cfg/training/yolov7-w6.yaml --weights '' --name yolov7-w6 --hyp data/hyp.scratch.p6.yaml
 ```
 
-다중 GPU 훈련
-``` shell
-# train p5 models
-python -m torch.distributed.launch --nproc_per_node 4 --master_port 9527 train.py --workers 8 --device 0,1,2,3 --sync-bn --batch-size 128 --data data/coco.yaml --img 640 640 --cfg cfg/training/yolov7.yaml --weights '' --name yolov7 --hyp data/hyp.scratch.p5.yaml
-
-# train p6 models
-python -m torch.distributed.launch --nproc_per_node 8 --master_port 9527 train_aux.py --workers 8 --device 0,1,2,3,4,5,6,7 --sync-bn --batch-size 128 --data data/coco.yaml --img 1280 1280 --cfg cfg/training/yolov7-w6.yaml --weights '' --name yolov7-w6 --hyp data/hyp.scratch.p6.yaml
-```
-
 ## (5) 전이 학습
 
-[`yolov7_training.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7_training.pt) [`yolov7x_training.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7x_training.pt) [`yolov7-w6_training.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-w6_training.pt) [`yolov7-e6_training.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-e6_training.pt) [`yolov7-d6_training.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-d6_training.pt) [`yolov7-e6e_training.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7-e6e_training.pt)
+[`yolov7_training.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7_training.pt) [`yolov7x_training.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7x_training.pt) [`yolov7-w6_training.pt`]
 
-맞춤형 데이터 세트를 위한 단일 GPU 미세 조정
-``` shell
-# finetune p5 models
-python train.py --workers 8 --device 0 --batch-size 32 --data data/custom.yaml --img 640 640 --cfg cfg/training/yolov7-custom.yaml --weights 'yolov7_training.pt' --name yolov7-custom --hyp data/hyp.scratch.custom.yaml
 
-# finetune p6 models
-python train_aux.py --workers 8 --device 0 --batch-size 16 --data data/custom.yaml --img 1280 1280 --cfg cfg/training/yolov7-w6-custom.yaml --weights 'yolov7-w6_training.pt' --name yolov7-w6-custom --hyp data/hyp.scratch.custom.yaml
-```
-
-## (6) 추론해보기
+## (6) 추론
 
 비디오 :
 ``` shell
@@ -228,7 +181,6 @@ python detect.py --weights yolov7.pt --conf 0.25 --img-size 640 --source inferen
 <br><br><br><br>
 
 # 3. YOLOv7 학습된 데이터와 RealSense D435를 활용한 좌표 추출
-## (1) 
 
 detect_RS.py 코드 중 일부...
 ```
