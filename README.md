@@ -1,3 +1,4 @@
+Robot_Delivery
 =========
 
 <div align="center">
@@ -50,9 +51,14 @@ Introduction
 
 # SEQUENCE
 ![왕빵스케치시퀀스](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/1c8ca792-1681-4096-b700-53bde99febdb)
-# Software
-![Screenshot from 2023-11-14 18-27-09](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/4b8a4b3b-2843-48c0-ba67-29bd906329db)
 
+# Software
+1. Station 보관 및 Robot 호출
+![스테이션](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/12d164d9-4c28-4b72-8314-7c2df1d446bc)
+2. 아파트 내 엘리베이터 도착 및 탑승
+![엘리베이터](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/595b23e2-877f-4102-b54b-fe6e8f4648d6)
+3. 현관 배송 후 복귀
+![현관](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/71e1c026-94a1-4638-b2f9-c92e83e073fc)
 # Ros Package
 ![Screenshot from 2023-11-14 18-26-37](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/7ae18880-0819-4301-9c87-c6da30babded)
 
