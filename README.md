@@ -47,7 +47,7 @@ dddddddddddddddddddd
 
 # 1. STATION 하드웨어
 
-# INPUT PART : 택배기사가 택배를 올려놓는 곳
+## INPUT PART : 택배기사가 택배를 올려놓는 곳
   
 | TITLE | Input Part |
 |:---:|:-----------------------|
@@ -66,9 +66,9 @@ dddddddddddddddddddd
 
   </div>
 
----------
+***
 
-# STATION PART : 택배가 규칙에 맞게 저장되는 곳
+## STATION PART : 택배가 규칙에 맞게 저장되는 곳
 | TITLE |  Station Part |
 |:---:|:----------------------|
 | GOAL | <br>- 공간효율화 <br> - 출고 순서를 마음대로 조절 <br> - 기존 유사 아이디어들과 차별화<br><br>|
@@ -95,7 +95,9 @@ dddddddddddddddddddd
   
 </div>
 
-# FINAL PRODUCT
+***
+
+## FINAL PRODUCT
  
 <div align="center">
   
@@ -123,8 +125,9 @@ dddddddddddddddddddd
 > * DC 모터
 > * 엔코더장착형 감속기어모터 IG-28GM+Encoder 01 TYPE
 > * L298n 모터드라이버
+***
 
-## 2. Station 소프트웨어
+# 2. Station 소프트웨어
 
 구성한 하드웨어를 다루기 위해 선택한 수단은 아두이노랑 ROS2다. 아두이노를 통해 센서들의 정보를 처리하면서 모터 두개를 제어하고, 택배 정보를 입력하는 수단인 카메라랑 정보를 주고 받기 위해 ROS2를 사용했다.
 
