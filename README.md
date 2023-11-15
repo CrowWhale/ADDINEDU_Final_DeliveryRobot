@@ -91,10 +91,18 @@ dddddddddddddddddddd
   
 </div>
 
-- 충족해야 하는 조건
-  
+- 충족해야 하는 조건  
   - 택배를 저장, 출고, 바구니를 회전하는 그 어떤 상황에서든 바구니의 평형을 유지해야한다.
   - 바구니의 진행경로상에서 다른 바구니와의 충돌 즉 다른 바구니의 회전을 막아서는 안된다.
+ 
+<div align="center">
+
+  <a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/efb97d7e-ac65-4343-9d41-62740af63a02" width="50%" /></a>
+    
+</div>
+
+
 
 
 ##### 결과
