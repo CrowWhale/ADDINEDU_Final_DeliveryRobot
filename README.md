@@ -44,10 +44,12 @@ dddddddddddddddddddd
 </div>
 
 # Station
-## 1. STATION 하드웨어
 
+# 1. STATION 하드웨어
 
-| TITLE | 입고 Part |
+# INPUT PART : 택배기사가 택배를 올려놓는 곳
+  
+| TITLE | Input Part |
 |:---:|:-----------------------|
 | GOAL | <br>- 택배기사님이 택배를 올려놓는 순간 이후 정보 등록, 스테이션 전달 자동화 <br><br> |
 | IDEA | <br>- 택배를 레일 시작 구간에 올려놓아 중간에 정보를 서버에 등록, 마지막에 Station에 전달하자 <br><br> |
@@ -62,10 +64,11 @@ dddddddddddddddddddd
     <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/3c4696ca-144e-4edf-9bf6-c5ce3bf0b5e5" width="20%" /></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
-  
-
   </div>
 
+---------
+
+# STATION PART : 택배가 규칙에 맞게 저장되는 곳
 | TITLE |  Station Part |
 |:---:|:----------------------|
 | GOAL | <br>- 공간효율화 <br> - 출고 순서를 마음대로 조절 <br> - 기존 유사 아이디어들과 차별화<br><br>|
@@ -91,22 +94,28 @@ dddddddddddddddddddd
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
   
 </div>
+
+# FINAL PRODUCT
  
 <div align="center">
+  
+  <a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/03fed296-cf10-4c82-a99c-f4d7c3eaa8dc" width="20%"/></a>
+  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
   <a>
-    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/efb97d7e-ac65-4343-9d41-62740af63a02" width="50%" /></a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/efb97d7e-ac65-4343-9d41-62740af63a02" width="15%" /></a>
+  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
+  
+  <a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/8d4480f1-d2a6-480e-96a2-983f2098f294" width="20%"/></a>
+  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
     
 </div>
 
 
 
 
-##### 결과
-> * 바구니의 평형을 유지하기위해 축 바구니 양쪽 옆에 바구니를 지지해주는 축을 각각 하나 총 두개를 사용
-> * 바구니가 움직이는 경로를 레일로 구현, 레일 두개를 바구니 양옆으로 바구니 축이랑 결합할수 있게 함
-> * 뼈대와 레일 구조는 과학상자6호를 사용해서 구현했으며, 바구니는 직접 3D 모델링을 해서 설계했다.
->
 #### 주요 구성품
 > * 과학상자 6호
 > * PIR 센서 두개
@@ -115,7 +124,7 @@ dddddddddddddddddddd
 > * 엔코더장착형 감속기어모터 IG-28GM+Encoder 01 TYPE
 > * L298n 모터드라이버
 
-## 2. 소프트웨어
+## 2. Station 소프트웨어
 
 구성한 하드웨어를 다루기 위해 선택한 수단은 아두이노랑 ROS2다. 아두이노를 통해 센서들의 정보를 처리하면서 모터 두개를 제어하고, 택배 정보를 입력하는 수단인 카메라랑 정보를 주고 받기 위해 ROS2를 사용했다.
 
