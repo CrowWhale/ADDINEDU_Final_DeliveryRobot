@@ -103,3 +103,27 @@ ros2 launch open_manipulator_x_controller open_manipulator_x_controller.launch.p
 ## 4. RealSense 
 ## 5. Server
 
+### Feature
+- 실내 배송 로봇 서비스에서 배송 정보를 저장하고 관리할 서버(AWS)를 구축 및 스테이션에 저장된 택배를 모니터링하고 배송 완료 시 사용자에게 피드백을 주기 위해 배송 사진 및 시간 로그를 GUI로 표시.
+
+### Main Functions
+- MySQL DB
+  
+  ![address](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/138747086/f4fc574a-5a91-462e-b308-543580093d99)
+
+- GUI execute (ROS)
+  <pre><code>ros2 run final(pkg_name) my_subscriber(subscribe node py name)</code></pre>
+
+### PROCESS
+
+#### GUI
+
+  - MySQL DB와 연결하여 업데이트되는 정보(station에 들어온 택배 정보)를 확인.
+
+    ![sql_table](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/138747086/1adfa7ff-8c1e-443d-ac24-1caf483bb457)
+
+  - Realsense camera로 촬영된 이미지 확인
+
+    ![gui](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/138747086/7721cce2-92dd-496d-ba41-695a0e71dc91)
+
+
