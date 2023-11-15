@@ -37,7 +37,7 @@ Introduction
 
 [『YOUTUBE_FULL_DEMO_VIDEO』](https://www.youtube.com/watch?v=yonJqRplI4o)
 
-# Scenario
+# SYSTEM_CONFIGURATION
 ![Screenshot from 2023-11-14 17-40-37](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/c881aef8-e224-4ff2-b445-d4ea391d142d)
 1. 자율주행 part
 > * 배송로봇 자율주행 구현(ROS, Mapping, Navigation)
@@ -49,6 +49,13 @@ Introduction
 4. Computer Vision & 영상처리 part
 > * 객체 text 데이터 인식(Computer vision, Image processing)
 
+# SEQUENCE
+![왕빵스케치시퀀스](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/1c8ca792-1681-4096-b700-53bde99febdb)
+# Software
+![Screenshot from 2023-11-14 18-27-09](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/4b8a4b3b-2843-48c0-ba67-29bd906329db)
+
+# Ros Package
+![Screenshot from 2023-11-14 18-26-37](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/7ae18880-0819-4301-9c87-c6da30babded)
 
 # Hardware
 
@@ -72,8 +79,4 @@ ros2 launch turtlebot3_bringup robot.launch.py
 ## 3. Station
 ## 4. RealSense 
 ## 5. Server
-# Software
-![Screenshot from 2023-11-14 18-27-09](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/4b8a4b3b-2843-48c0-ba67-29bd906329db)
 
-# Ros Package
-![Screenshot from 2023-11-14 18-26-37](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/7ae18880-0819-4301-9c87-c6da30babded)
