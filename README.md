@@ -50,16 +50,6 @@ python3 depth_el.py
 
 # 1. RealSense SDK(기초 매뉴얼 )
 
-#### 빌드된 패키지 사용
-**Intel® RealSense™ SDK 2.0**은 Ubuntu 16/18/20/22 [LTS](https://wiki.ubuntu.com/LTS)의 Intel X86/AMD64 기반 Debian 배포용으로 [`dpkg`](https://en.wikipedia.org/wiki/Dpkg) 형식의 설치 패키지를 제공합니다. `librealsense2-dkms` 커널 드라이버 패키지는 Ubuntu LTS 커널 4.4, 4.8, 4.10, 4.13, 4.15, 4.18*, 5.0*, 5.3*, 5.4, 5.13 및 5.15를 지원합니다. 자세한 내용은 [Ubuntu 커널 릴리스 일정](https://wiki.ubuntu.com/Kernel/Support)을 참조하십시오.
-
-#### 소스 코드에서 구성 및 빌드
-가능한 경우 DKMS 패키지를 사용하는 것이 좋지만 다음 경우에는 수동으로 시스템을 설치하고 패치해야 합니다.
- - LTS가 아닌 Ubuntu 커널 버전 사용: **4.16 **
- - 사용자 지정 패치/모듈을 `librealsense` SDK와 통합.
- - 대안 커널/배포에 대한 패치 조정.
-
-자세한 단계는 [Linux 수동 설치 가이드](./installation.md)에 설명되어 있습니다.
 
 ## (1) 패키지 다운로드:
 - 서버의 공개 키 등록:
@@ -68,7 +58,7 @@ sudo mkdir -p /etc/apt/keyrings
 curl -sSf https://librealsense.intel.com/Debian/librealsense.pgp | sudo tee /etc/apt/keyrings/librealsense.pgp > /dev/null
 ```
 
-- Make sure apt HTTPS support is installed: `sudo apt-get install apt-transport-https`
+`sudo apt-get install apt-transport-https`
 
 - 저장소 목록에 서버를 추가: 
 ```
@@ -112,14 +102,13 @@ Intel RealSense D435 카메라를 다시 연결하고 다음을 실행: `realsen
 **Important**  패키지 제거는 설치된 다른 패키지가 이를 직접 참조하지 않는 경우에만 허용된다.
 예를 들어,`librealsense2-udev-rules`를 삭제 하기 위해서는 `librealsense2` 를 먼저 지울 것.
 
-다음을 사용하여 단일 패키지를 제거합니다.
+다음을 사용하여 단일 패키지를 제거
   `sudo apt-get purge <package-name>`  
 
-다음을 사용하여 RealSense™ SDK 관련 패키지를 모두 제거하세요.
+다음을 사용하여 RealSense™ SDK 관련 패키지를 모두 제거
   `dpkg -l | grep "realsense" | cut -d " " -f 3 | xargs sudo dpkg --purge`  
 
 ## 패키지 세부사항:
-The packages and their respective content are listed below:  
 
 이름    |      콘텐츠   | Depends on |
 -------- | ------------ | ---------------- |
@@ -137,9 +126,6 @@ librealsense2-gl-dbg | 디버깅 목적에 필요한 GLSL 디버그 기호 | lib
 
 
 # 2. Official YOLOv7(기초 매뉴얼)
-
-![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/c9a18886-9e22-4fb7-8eeb-6aa1184c149c)
-
 
 ## (1)성능
 
@@ -185,32 +171,12 @@ cd /yolov7
 python test.py --data data/coco.yaml --img 640 --batch 32 --conf 0.001 --iou 0.65 --device 0 --weights yolov7.pt --name yolov7_640_val
 ```
 
-그 결과는 다음과 같습니다.
-```
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.51206
- Average Precision  (AP) @[ IoU=0.50      | area=   all | maxDets=100 ] = 0.69730
- Average Precision  (AP) @[ IoU=0.75      | area=   all | maxDets=100 ] = 0.55521
- Average Precision  (AP) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.35247
- Average Precision  (AP) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.55937
- Average Precision  (AP) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.66693
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=  1 ] = 0.38453
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets= 10 ] = 0.63765
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=   all | maxDets=100 ] = 0.68772
- Average Recall     (AR) @[ IoU=0.50:0.95 | area= small | maxDets=100 ] = 0.53766
- Average Recall     (AR) @[ IoU=0.50:0.95 | area=medium | maxDets=100 ] = 0.73549
- Average Recall     (AR) @[ IoU=0.50:0.95 | area= large | maxDets=100 ] = 0.83868
-```
-
-정확성 측정을 위해 다음을 다운로드 할것. [COCO-annotations for Pycocotools](http://images.cocodataset.org/annotations/annotations_trainval2017.zip) to the `./coco/annotations/instances_val2017.json`
-
 ## (4) 훈련
 
 데이터 준비하기
 ``` shell
 bash scripts/get_coco.sh
 ```
-
-* MS coco 데이터셋을 다운로드 하세요. ([train](http://images.cocodataset.org/zips/train2017.zip), [val](http://images.cocodataset.org/zips/val2017.zip), [test](http://images.cocodataset.org/zips/test2017.zip)) and [labels](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/coco2017labels-segments.zip). 이전에 다른 버전 YOLO를 사용한 적 있다면 `train2017.cache` and `val2017.cache` 파일을 삭제하고 다시 다운로드 하세요.  [labels](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/coco2017labels-segments.zip) 
 
 '단일' GPU 훈련
 ``` shell
