@@ -44,33 +44,34 @@ dddddddddddddddddddd
 </div>
 
 # Station
-## 1. 하드웨어
-
-### 입고 part 
-
-- 구현하고자 했던 목표
-  - 택배기사님이 택배를 입고하는 부분에 화물을 올려놓는 순간, 택배 정보를 등록, 스테이션에 자동으로 전달
-    
-- 채택된 아이디어
-  - 택배를 레일 특정 구간에 올려놓아서 중간에 정보를 서버에 등록, 마지막에 저장하는 부분에 전달하게 하자.
+## 1. STATION 하드웨어
 
 
+| TITLE | 입고 Part |
+|:---:|:-----------------------|
+| GOAL | <br>- 택배기사님이 택배를 올려놓는 순간 이후 정보 등록, 스테이션 전달 자동화 <br><br> |
+| IDEA | <br>- 택배를 레일 시작 구간에 올려놓아 중간에 정보를 서버에 등록, 마지막에 Station에 전달하자 <br><br> |
+| RESULT | <br>- PIR 적외선 센서를 두개 사용 <br> - 각각 택배를 올려놓는 순간이랑 정보를 저장하는 순간을 감지 <br> - 정보를 저장할때 카메라 사용 <br><br> |
 
-#### 결과
-> * PIR 적외선 센서를 두개 사용해서 각각 택배를 올려놓는 순간이랑 택배 정보를 저장하는 순간을 감지한다
-> * 카메라로 택배사진을 찍을때를, 택배 정보를 저장하는 순간으로 설정하자
+<div align="center">
+  <a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/dcff9c37-9f38-49cc-872f-e5e4adbc7f57" width="20%" /></a>
+  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
+<a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/3c4696ca-144e-4edf-9bf6-c5ce3bf0b5e5" width="20%" /></a>
+  <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
+  
 
-### 스테이션 part
+  </div>
 
-- 구현하고자 했던 목표
-  - 공간 효율화
-  - 출고 순서를 조절
-  - 기존 유사 아이디어들과 차별화
-    
-- 채택된 아이디어
-  - 관람차처럼 회전, 순환하면서 택배를 저장하는 구조를 구현하자.
+| TITLE |  Station Part |
+|:---:|:----------------------|
+| GOAL | <br>- 공간효율화 <br> - 출고 순서를 마음대로 조절 <br> - 기존 유사 아이디어들과 차별화<br><br>|
+| IDEA | <br>- 관람차처럼 회전, 순환하면서 택배를 저장하는 구조를 구현하자 <br><br>|
+| DETAIL | <br>- 택배를 저장, 출고, 바구니를 회전하는 그 어떤 상황에서든 바구니의 평형을 유지해야한다. <br> - 바구니의 진행경로상에서 다른 바구니와의 충돌 즉 다른 바구니의 회전을 막아서는 안된다. <br> <br>|
+| RESULT | <br>- 바구니의 평형을 유지하기위해 축 바구니 양쪽 옆에 바구니를 지지해주는 축을 각각 하나 총 두개를 사용 <br> - 바구니가 움직이는 경로를 레일로 구현, 레일 두개를 바구니 양옆으로 바구니 축이랑 결합할수 있게함 <br> - 뼈대와 레일 구조는 과학상자6호를 사용해서 구현했으며, 바구니는 직접 3D 모델링을 해서 설계했다. <br><br>|
 
 <div align="center">
   <a>
@@ -90,10 +91,6 @@ dddddddddddddddddddd
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
   
 </div>
-
-- 충족해야 하는 조건  
-  - 택배를 저장, 출고, 바구니를 회전하는 그 어떤 상황에서든 바구니의 평형을 유지해야한다.
-  - 바구니의 진행경로상에서 다른 바구니와의 충돌 즉 다른 바구니의 회전을 막아서는 안된다.
  
 <div align="center">
 
@@ -122,12 +119,16 @@ dddddddddddddddddddd
 
 구성한 하드웨어를 다루기 위해 선택한 수단은 아두이노랑 ROS2다. 아두이노를 통해 센서들의 정보를 처리하면서 모터 두개를 제어하고, 택배 정보를 입력하는 수단인 카메라랑 정보를 주고 받기 위해 ROS2를 사용했다.
 
-- 아두이노로부터 정보를 받아와 subscriber에게 정보를 발행하는 publisher 실행코드
- <pre><code>ros2 run arduino_station arduino_publisher --ros-args --params-file ~/final_ws/src/arduino_station/param/arduino_config.yaml</code></pre>
+ <pre><code>
+   // 아두이노로부터 정보를 받아와 subscriber에게 정보를 발행하는 publisher 실행코드
+   ros2 run arduino_station arduino_publisher --ros-args --params-file ~/final_ws/src/arduino_station/param/arduino_config.yaml
+ </code></pre>
 
  
-- publisher로부터 정보를 받아 카메라를 실행하고 층 수 정보를 아두이노에게 전달하는 subscriber 실행코드 
-<pre><code>ros2 run arduino_station arduino_subscriber --ros-args --params-file ~/final_ws/src/arduino_station/param/arduino_config.yaml</code></pre>
+<pre><code>
+  // publisher로부터 정보를 받아 카메라를 실행하고 층 수 정보를 아두이노에게 전달하는 subscriber 실행코드 
+  ros2 run arduino_station arduino_subscriber --ros-args --params-file ~/final_ws/src/arduino_station/param/arduino_config.yaml
+</code></pre>
 
 
 
