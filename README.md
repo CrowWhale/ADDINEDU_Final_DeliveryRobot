@@ -11,7 +11,7 @@ ROBOT_DELIVERY
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
   <a>
-    <img src="https://github.com/ultralytics/yolov5/releases/download/v1.0/logo-aws-small.png" width="8%" /></a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/7ba7d2a7-7181-4a1b-951f-4657235dc992" width="10%" /></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
   
   <a>
