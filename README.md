@@ -54,7 +54,7 @@ dddddddddddddddddddd
 - 채택된 아이디어
   - 택배를 레일 특정 구간에 올려놓아서 중간에 정보를 서버에 등록, 마지막에 저장하는 부분에 전달하게 하자.
 
-레일 사진
+
 
 #### 결과
 > * PIR 적외선 센서를 두개 사용해서 각각 택배를 올려놓는 순간이랑 택배 정보를 저장하는 순간을 감지한다
@@ -78,7 +78,7 @@ dddddddddddddddddddd
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
   <a>
-    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/74ddc5f0-5b8a-4d89-9295-5c3cc4e814eb" width="20" /></a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/74ddc5f0-5b8a-4d89-9295-5c3cc4e814eb" width="20%" /></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
   <a>
@@ -91,15 +91,10 @@ dddddddddddddddddddd
   
 </div>
 
-
-
-
 - 충족해야 하는 조건
   
   - 택배를 저장, 출고, 바구니를 회전하는 그 어떤 상황에서든 바구니의 평형을 유지해야한다.
   - 바구니의 진행경로상에서 다른 바구니와의 충돌 즉 다른 바구니의 회전을 막아서는 안된다.
-
-
 
 
 ##### 결과
@@ -121,6 +116,8 @@ dddddddddddddddddddd
 
 - 아두이노로부터 정보를 받아와 subscriber에게 정보를 발행하는 publisher 실행코드
  <pre><code>ros2 run arduino_station arduino_publisher --ros-args --params-file ~/final_ws/src/arduino_station/param/arduino_config.yaml</code></pre>
+
+ 
 - publisher로부터 정보를 받아 카메라를 실행하고 층 수 정보를 아두이노에게 전달하는 subscriber 실행코드 
 <pre><code>ros2 run arduino_station arduino_subscriber --ros-args --params-file ~/final_ws/src/arduino_station/param/arduino_config.yaml</code></pre>
 
