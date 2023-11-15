@@ -1,4 +1,3 @@
-ROBOT_DELIVERY
 =========
 
 <div align="center">
