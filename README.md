@@ -1,3 +1,5 @@
+<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=Realsense/YOLOv7&fontSize=90"/>
+
 
 # <div align="center">요약정리</div>
 
@@ -43,6 +45,7 @@ python3 detect_RS.py --weights yolov7.pt --conf-thres 0.2
 ```
 python3 depth_el.py
 ```
+![ezgif com-video-to-gif (1)](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/8f41da90-46bc-4bc0-a9a1-62c78b1b427c)
 
 
 # 1. RealSense SDK(기초 매뉴얼 )
