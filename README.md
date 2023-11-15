@@ -80,6 +80,7 @@ dddddddddddddddddddd
   - 바구니의 진행경로상에서 다른 바구니와의 충돌 즉 다른 바구니의 회전을 막아서는 안된다.
 
 스테이션 저장부분 사진
+https://github.com/addinedu-ros-2nd/robot-repo-1/blob/JH/README.md
 
 ##### 결과
 > * 바구니의 평형을 유지하기위해 축 바구니 양쪽 옆에 바구니를 지지해주는 축을 각각 하나 총 두개를 사용
