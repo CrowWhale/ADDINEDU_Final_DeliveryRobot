@@ -131,6 +131,7 @@ dddddddddddddddddddd
 
 구성한 하드웨어를 다루기 위해 선택한 수단은 아두이노랑 ROS2다. 아두이노를 통해 센서들의 정보를 처리하면서 모터 두개를 제어하고, 택배 정보를 입력하는 수단인 카메라랑 정보를 주고 받기 위해 ROS2를 사용했다.
 
+
  <pre><code>
    // 아두이노로부터 정보를 받아와 subscriber에게 정보를 발행하는 publisher 실행코드
    ros2 run arduino_station arduino_publisher --ros-args --params-file ~/final_ws/src/arduino_station/param/arduino_config.yaml
