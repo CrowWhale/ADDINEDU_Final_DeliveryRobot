@@ -114,9 +114,8 @@ ros2 launch open_manipulator_x_controller open_manipulator_x_controller.launch.p
 - GUI execute (ROS)
   <pre><code>ros2 run final(pkg_name) my_subscriber(subscribe node py name)</code></pre>
 
-### PROCESS
 
-#### GUI
+### GUI
 
   - MySQL DB와 연결하여 업데이트되는 정보(station에 들어온 택배 정보)를 확인.
 
