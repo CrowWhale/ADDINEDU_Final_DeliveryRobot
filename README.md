@@ -1,4 +1,3 @@
-[Screencast from 11-15-2023 10:00:47 AM.webm](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/7908fe9a-91c6-4557-98db-d5b81bcef162)<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=Realsense/YOLOv7&fontSize=90"/>
 
 # <div align="center">요약정리</div>
 
