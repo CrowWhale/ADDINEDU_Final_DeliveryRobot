@@ -20,6 +20,10 @@
 </div>
 
 ## <div align="center"> 🔍 프로그램 실행 🔍 </div>
+### (1)
+![ezgif com-video-to-gif](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/eb679b0a-1f5f-4909-b294-be70ccbb02f6)
+### (2)
+![ezgif com-video-to-gif (1)](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/6f97749c-2506-4979-95c4-7861764e332c)
 
 
 
