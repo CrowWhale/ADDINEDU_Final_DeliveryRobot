@@ -1,6 +1,6 @@
 
   <a>
-    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/1d1ae5ba-0597-4bc5-b567-6f2b2752250f" width="60%" /></a> 
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/6680eb9f-e24c-4a1a-a46a-4829499a23aa" width="60%" /></a> 
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
 
@@ -42,7 +42,7 @@ Introduction
 [『YOUTUBE_FULL_DEMO_VIDEO』](https://www.youtube.com/watch?v=yonJqRplI4o)
 
 # SYSTEM_CONFIGURATION
-![Screenshot from 2023-11-14 17-40-37](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/c881aef8-e224-4ff2-b445-d4ea391d142d)
+![시나리오](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/73627672-8886-4af3-89e4-e78d090dd273)
 1. 자율주행 part
 * 배송로봇 자율주행 구현(ROS, Mapping, Navigation)
 2. Manipulator
@@ -54,15 +54,15 @@ Introduction
 * 객체 text 데이터 인식(Computer vision, Image processing)
 
 # TOTAL_SEQUENCE
-![왕빵스케치시퀀스](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/1c8ca792-1681-4096-b700-53bde99febdb)
+![왕빵스케치시퀀스](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/4505e258-1057-4d60-9951-e2414e35cef6)
 
 # Software Design
 ## 1. 배달리오 시스템 상태전이도
-![스테이션](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/12d164d9-4c28-4b72-8314-7c2df1d446bc)
+![스테이션](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/52498d22-97d8-4921-8dc3-dde1055705e2)
 ## 2. 아파트 내 엘리베이터 도착 및 탑승
-![엘리베이터](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/595b23e2-877f-4102-b54b-fe6e8f4648d6)
+![엘리베이터](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/a4bf6ac3-30bd-441a-b184-7465c9504d08)
 ## 3. 현관 배송 후 복귀
-![현관](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/71e1c026-94a1-4638-b2f9-c92e83e073fc)
+![현관](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/a2ef485a-8daf-4931-be25-e4fb5b29e40b)
 # Ros Package
 ![ros_package](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/3e7ac35c-5b86-4f85-abc6-e2ebe4641b74)
 
