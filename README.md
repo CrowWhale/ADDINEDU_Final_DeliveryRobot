@@ -180,18 +180,17 @@ ros2 launch open_manipulator_x_controller open_manipulator_x_controller.launch.p
 > * L298n 모터드라이버
 ***
 
-### Feature
+### Excute Code
 
 아두이노를 통해 센서들의 정보를 처리하면서 모터 두개를 제어하고, 택배 정보를 입력하는 수단인 카메라랑 정보를 주고 받기 위해 ROS2를 사용
 
+* 아두이노로부터 정보를 받아와 subscriber에게 정보를 발행하는 publisher 실행코드
  <pre><code>
-   // 아두이노로부터 정보를 받아와 subscriber에게 정보를 발행하는 publisher 실행코드
    ros2 run arduino_station arduino_publisher --ros-args --params-file ~/final_ws/src/arduino_station/param/arduino_config.yaml
  </code></pre>
 
- 
+* publisher로부터 정보를 받아 카메라를 실행하고 층 수 정보를 아두이노에게 전달하는 subscriber 실행코드 
 <pre><code>
-  // publisher로부터 정보를 받아 카메라를 실행하고 층 수 정보를 아두이노에게 전달하는 subscriber 실행코드 
   ros2 run arduino_station arduino_subscriber --ros-args --params-file ~/final_ws/src/arduino_station/param/arduino_config.yaml
 </code></pre>
 
@@ -216,6 +215,12 @@ python3 depth_el.py
 
 * Trained Model 
 [`yolov7_training.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7_training.pt) [`yolov7x_training.pt`](https://github.com/WongKinYiu/yolov7/releases/download/v0.1/yolov7x_training.pt)
+
+### Excute Code
+* PC
+```
+ros2 run depth_example mail_node.py
+```
 
 ## 5. Server
 
