@@ -40,16 +40,16 @@ Introduction
 # SYSTEM_CONFIGURATION
 ![Screenshot from 2023-11-14 17-40-37](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/c881aef8-e224-4ff2-b445-d4ea391d142d)
 1. 자율주행 part
-> * 배송로봇 자율주행 구현(ROS, Mapping, Navigation)
+* 배송로봇 자율주행 구현(ROS, Mapping, Navigation)
 2. Manipulator
-> * manipulator 구동 알고리즘(ROS)
-> * 이송 객체 크기 인식(Deep Learning, Computer Vision)
+* manipulator 구동 알고리즘(ROS)
+* 이송 객체 크기 인식(Deep Learning, Computer Vision)
 3. Station part
-> * Station 제작 및 구동 알고리즘(3D modeling & printing, IoT)
+* Station 제작 및 구동 알고리즘(3D modeling & printing, IoT)
 4. Computer Vision & 영상처리 part
-> * 객체 text 데이터 인식(Computer vision, Image processing)
+* 객체 text 데이터 인식(Computer vision, Image processing)
 
-# SEQUENCE
+# TOTAL_SEQUENCE
 ![왕빵스케치시퀀스](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/1c8ca792-1681-4096-b700-53bde99febdb)
 
 # Software
