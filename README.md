@@ -251,11 +251,11 @@ ros2 run depth_example mail_node.py
 
   - MySQL DB와 연결하여 업데이트되는 정보(station에 들어온 택배 정보)를 확인.
 
-    ![sql_table](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/138747086/1adfa7ff-8c1e-443d-ac24-1caf483bb457)
+![Screenshot from 2023-11-16 18-41-24](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/d201d0d7-9693-4685-94e7-b01323f896ee)
 
   - Realsense camera로 촬영된 이미지 확인
 
-    ![gui](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/138747086/7721cce2-92dd-496d-ba41-695a0e71dc91)
+![gui](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/e5bb7f28-90d8-40f1-af0c-f4b0b7446429)
 
 ### Metabase
   - MySQL DB와 연결한 Metabase에 대시보드로 실시간 주소 정보 확인
