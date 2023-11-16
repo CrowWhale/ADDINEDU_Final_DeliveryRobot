@@ -32,7 +32,7 @@ Introduction
 ### 아파트 내 택배를 자동으로 분류 및 보관하는 STATION과 현관까지 배송해주는 DELIVERY_ROBOT 개발
 # Demo
 <div align="center">
-  <img src="demo.gif"/>
+  <img src="gif/demo.gif"/>
 </div>
 
 [『YOUTUBE_FULL_DEMO_VIDEO』](https://www.youtube.com/watch?v=yonJqRplI4o)
@@ -221,6 +221,9 @@ python3 depth_el.py
 ```
 ros2 run depth_example mail_node.py
 ```
+<div align="center">
+  <img src="gif/detect_push.gif"/>
+</div>
 
 ## 5. Server
 
