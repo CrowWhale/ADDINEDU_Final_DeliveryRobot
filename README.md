@@ -52,8 +52,8 @@ Introduction
 # TOTAL_SEQUENCE
 ![왕빵스케치시퀀스](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/1c8ca792-1681-4096-b700-53bde99febdb)
 
-# Software
-## 1. Station 보관 및 Robot 호출
+# Software Design
+## 1. 배달리오 시스템 상태전이도
 ![스테이션](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/12d164d9-4c28-4b72-8314-7c2df1d446bc)
 ## 2. 아파트 내 엘리베이터 도착 및 탑승
 ![엘리베이터](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/595b23e2-877f-4102-b54b-fe6e8f4648d6)
