@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=Realsense/YOLOv7&fontSize=90"/>
+![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/946ec306-a3a2-4958-9215-af2bed37df8f)<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=Realsense/YOLOv7&fontSize=90"/>
 
 
 # <div align="center">요약정리</div>
@@ -229,3 +229,28 @@ depth_el.py 코드 중 일부...
 ```
 python3 depth_el.py
 ```
+
+# 5. 배송 알림 서비스 (카카오톡 api 메세지 및 사이트 구성)
+
+## (1) kakao 환경 세팅
+```
+alias kakao="humble; source ~/dev_ws/kakao\ api/kakao_message/install/local_setup.bash; echo \"kakao workspace is activated.\""
+```
+
+## (2) kakao 환경 불러온후
+```
+kakao
+```
+![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/f5b70540-03f0-498f-9cd1-a7b1e82371b1)
+
+## (3) kakao_pub 을 통해, 10이라는 신호를 Publish
+```
+ros2 run kakao_package kakao_pub
+```
+## (4) kaka_sub 을 통해, 10이이라는 신호를 subsrcribe하면 카카오톡 알림 메세지를 전송
+```
+ros2 run kakao_package kakao_sub
+```
+![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/6398fe5e-0d54-4735-a62d-350464ea7b62)
+![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/134914e7-af22-4c6e-8494-585c3449fb5e)
+
