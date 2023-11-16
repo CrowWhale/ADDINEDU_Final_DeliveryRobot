@@ -123,11 +123,11 @@ class FindLocation(Node):
             
             self.corridor_right_room()
             self.navigate_to_goal()
-        
-        elif line == "2":       
+            
             self.right_room()
-            self.navigate_to_goal()     
-        
+            self.navigate_to_goal()   
+        elif line == "2":       
+  
             self.corridor_left_room()
             self.navigate_to_goal()         
 
