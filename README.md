@@ -221,6 +221,7 @@ python3 depth_el.py
 
 ### Feature
 - 실내 배송 로봇 서비스에서 배송 정보를 저장하고 관리할 서버(AWS)를 구축 및 스테이션에 저장된 택배를 모니터링하고 배송 완료 시 사용자에게 피드백을 주기 위해 배송 사진 및 시간 로그를 GUI로 표시.
+- 가상 server를 생성 및 대시보드로 소포의 주소를 간략히 확인 
 
 ### Main Functions
 - MySQL DB
@@ -229,6 +230,9 @@ python3 depth_el.py
 
 - GUI execute (ROS)
   <pre><code>ros2 run final(pkg_name) my_subscriber(subscribe node py name)</code></pre>
+
+- Metabase
+    <pre><code>docker start metabase</code></pre>
 
 
 ### GUI
@@ -241,4 +245,7 @@ python3 depth_el.py
 
     ![gui](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/138747086/7721cce2-92dd-496d-ba41-695a0e71dc91)
 
+### Metabase
+  - MySQL DB와 연결한 Metabase에 대시보드로 실시간 주소 정보 확인
+      ![sql_with_dashboard](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/132206474/d874e2ad-0c10-4304-9566-7988b4e7a220)
 
