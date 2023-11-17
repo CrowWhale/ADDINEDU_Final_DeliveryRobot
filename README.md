@@ -1,4 +1,4 @@
-![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/946ec306-a3a2-4958-9215-af2bed37df8f)<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=Realsense/YOLOv7&fontSize=90"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=Realsense/YOLOv7&fontSize=90"/>
 
 
 # <div align="center">요약정리</div>
@@ -22,9 +22,11 @@
 
 ## <div align="center"> 프로그램 실행 </div>
 ### (1) 로봇 기준, 인식된 객체의 좌표계 추출
-![ezgif com-video-to-gif](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/eb679b0a-1f5f-4909-b294-be70ccbb02f6)
+![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/f39e6345-702b-45f0-bb71-135fb98b7737)
+
+
 ### (2) 로봇 기준 정면 물체(엘리베이터)와의 거리 실시간 검출
-![ezgif com-video-to-gif (1)](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/6f97749c-2506-4979-95c4-7861764e332c)
+![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/12fc5e6d-acbf-4902-a9fd-1852f56d8b71)
 
 
 
@@ -36,14 +38,14 @@
 python3 detect_RS.py --weights yolov7.pt --conf-thres 0.2
 
 ```
-![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/f43497bb-643e-4a73-9224-b77bd7972e11)
+[Screencast from 11-17-2023 02:31:23 PM.webm](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/d43c637c-b224-406a-b087-ce3ed666c7b6)
 
 - 엘리베이터까지의 거리값을 인식하여 0.3m 이상일 경우 엘리베이터 문이 열림, 0.3m 이하일 경우 엘리베이터 문이 닫힘으로 인식하는 명령어
   
 ```
 python3 depth_el.py
 ```
-![ezgif com-video-to-gif (1)](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/8f41da90-46bc-4bc0-a9a1-62c78b1b427c)
+[Screencast from 11-15-2023 10:10:34 AM.webm](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/a8003355-c2a2-410b-9b16-0b5d08a067b8)
 
 
 # 1. RealSense SDK(기초 매뉴얼 )
@@ -170,8 +172,8 @@ python detect.py --weights yolov7.pt --conf 0.25 --img-size 640 --source yourvid
 ``` shell
 python detect.py --weights yolov7.pt --conf 0.25 --img-size 640 --source inference/images/horses.jpg
 ```
+![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/9d4eeb57-b340-447f-bf2f-8213e314e12a)
 
-![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/811e1317-de4e-4b8e-97e3-ef6e7227cccc)
 
 
 
@@ -241,7 +243,7 @@ alias kakao="humble; source ~/dev_ws/kakao\ api/kakao_message/install/local_setu
 ```
 kakao
 ```
-![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/f5b70540-03f0-498f-9cd1-a7b1e82371b1)
+![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/b3cfb350-2602-47a9-bb73-5e59dfab00d4)
 
 ## (3) kakao_pub 을 통해, 10이라는 신호를 Publish
 ```
@@ -251,6 +253,7 @@ ros2 run kakao_package kakao_pub
 ```
 ros2 run kakao_package kakao_sub
 ```
-![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/6398fe5e-0d54-4735-a62d-350464ea7b62)
-![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/134914e7-af22-4c6e-8494-585c3449fb5e)
+![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/2a7a9abd-4f03-4778-a2cd-24573a019273)
+![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/9b86aaa6-4c7d-41aa-8d89-5386c45ebb4d)
+
 
