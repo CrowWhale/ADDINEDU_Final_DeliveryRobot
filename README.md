@@ -114,11 +114,11 @@ ros2 launch open_manipulator_x_controller open_manipulator_x_controller.launch.p
 
 <div align="center">
   <a>
-    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/dcff9c37-9f38-49cc-872f-e5e4adbc7f57" width="20%" /></a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/a4c5a7d1-6539-4852-ab07-44b4be9c3090" width="20%" /></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
 <a>
-    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/3c4696ca-144e-4edf-9bf6-c5ce3bf0b5e5" width="20%" /></a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/bad086f8-2bc9-42b2-b3d1-8b59b91e44a6" width="20%" /></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
   </div>
@@ -135,22 +135,23 @@ ros2 launch open_manipulator_x_controller open_manipulator_x_controller.launch.p
 
 <div align="center">
   <a>
-    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/ba506897-1435-4688-b4a1-dcf31c32a36a" width="20%" /></a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/75b43d7e-1f2c-4127-b422-bc9460fd4692" width="20%" /></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
   <a>
-    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/74ddc5f0-5b8a-4d89-9295-5c3cc4e814eb" width="20%" /></a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/3c214a3a-ccba-471b-a5ce-1014ccc51d0b" width="20%" /></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
   <a>
-    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/b32db026-1fdc-400c-884c-a8378d228212" width="20%" /></a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/2cd5ad5b-d284-45f8-83a8-89afc9dc8383" width="20%" /></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
   <a>
-    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/aa3a01b7-b49f-45b4-8b51-16ffe0ca75d8" width="20%" /></a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/ec372cd3-2b35-4d0d-a7e8-e69d5057206b" width="20%" /></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
   
 </div>
+
 
 ***
 
@@ -159,19 +160,18 @@ ros2 launch open_manipulator_x_controller open_manipulator_x_controller.launch.p
 <div align="center">
   
   <a>
-    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/03fed296-cf10-4c82-a99c-f4d7c3eaa8dc" width="20%"/></a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/6c729bd1-9752-49fb-aab2-db9c795f4300" width="20%"/></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
 
   <a>
-    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/efb97d7e-ac65-4343-9d41-62740af63a02" width="15%" /></a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/031485c2-9348-4e50-b7cb-846be09ef73d" width="25%" /></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
   
   <a>
-    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/8d4480f1-d2a6-480e-96a2-983f2098f294" width="20%"/></a>
+    <img src="https://github.com/addinedu-ros-2nd/robot-repo-1/assets/140477483/b9a88678-59db-444e-80d6-3505256c5a9b" width="25%"/></a>
   <img src="https://github.com/ultralytics/assets/raw/main/social/logo-transparent.png" width="5%" alt="" />
     
 </div>
-
 
 
 
