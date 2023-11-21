@@ -208,7 +208,7 @@ ros2 launch open_manipulator_x_controller open_manipulator_x_controller.launch.p
 python3 detect_RS.py --weights yolov7.pt --conf-thres 0.2
 
 ```
-![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/f43497bb-643e-4a73-9224-b77bd7972e11)
+![image](https://github.com/addinedu-ros-2nd/robot-repo-1/assets/47076138/12fc5e6d-acbf-4902-a9fd-1852f56d8b71)
 
 - 엘리베이터까지의 거리값을 인식하여 0.3m 이상일 경우 엘리베이터 문이 열림, 0.3m 이하일 경우 엘리베이터 문이 닫힘으로 인식하는 명령어
   
